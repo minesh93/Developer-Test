@@ -8,4 +8,24 @@ function repeat(array){
 	return returnArray;
 }
 
-console.log( repeat([1,2,3]) );
+console.log("Task One:" + repeat([1,2,3]) );
+
+
+//- Task Two: No vowels, lowercase except the first letter.
+function reformat(input){
+	  let letters = input.split("");
+	  return letters.reduce((prev, current,index,array) => {
+	  	if(index == 0){
+	  		current = current.toUpperCase();
+	  	} else {
+	  		current = current.toLowerCase();
+	  	}
+	    if(!/^([aeiou])$/.test(current)){
+	      return prev + current;
+	    }
+	    return prev;
+	  }, '');
+
+}
+
+console.log("Task Two:" + reformat("liMeSHArp DeveLoper TEST") );
